@@ -5,12 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin  } = require('vue-loader')
 const { util } = require('./utils.js')
-/*** */
-// function assetsPath(_path_){
-//   const assetsSubDirectory = process.env.NODE_ENV === 'production' ? 'static' : 'static'
-//   return path.posix.join(assetsSubDirectory, _path_)
-// }
-//publicPath: process.env.NODE_ENV === 'production' ? '/' : '/'
+
 module.exports = {
   entry: ['babel-polyfill','./src/main.js'],
   output: {
