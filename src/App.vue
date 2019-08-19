@@ -16,7 +16,11 @@ export default {
     }
   },
   mounted() {
-    console.log('success')
+    var test = {
+      name: 'jack0',
+      age: 36
+    }
+    console.log(Array.from(test))
   }
 }
 </script>
