@@ -5,7 +5,9 @@ const devConfig = {
   mode: 'development',
   devtool: '#eval-source-map',
   devServer: {
-    port: 3333
+    port: 3333,
+    hot: true,
+    open: true,
   }
 }
 

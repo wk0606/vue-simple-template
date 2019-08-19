@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "set NODE_ENV=production && webpack --config config/webpack.config.prod.js --process --colors",
-    "dev": "set NODE_ENV=development && webpack-dev-server --config config/webpack.config.dev.js --process"
+    "dev": "webpack-dev-server --config config/webpack.config.dev.js"
   },
   "repository": {
     "type": "git",

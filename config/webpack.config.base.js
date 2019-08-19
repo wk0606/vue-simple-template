@@ -15,22 +15,31 @@ module.exports = {
   entry: ['babel-polyfill','./src/main.js'],
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: util.assetsPath('js/[name]-[hash].js'),
-    
+    filename: util.assetsPath('js/[name]-[hash].js')
   },
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../../'
+            }
+          },
           'css-loader'
         ]
       },
       {
         test: /\.less$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../../'
+            }
+          },
           'css-loader',
           'less-loader'
         ]
@@ -64,6 +73,14 @@ module.exports = {
             name: util.assetsPath('images/[name].[hash:7].[ext]'), // 图片输出的路径
             limit: 1 * 1024
           }
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: util.assetsPath('fonts/[name].[ext]'),
         }
       },
     ]
